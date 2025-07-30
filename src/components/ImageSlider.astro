@@ -38,7 +38,7 @@ const {
         data-slide={index}
       >
         <img
-          src={image.src}
+          src={image.src.startsWith('/') ? image.src : import.meta.env.BASE_URL + "/" + image.src}
           alt={image.alt}
           title={image.title}
           class="w-full h-full object-cover rounded-lg"

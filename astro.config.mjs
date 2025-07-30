@@ -3,11 +3,18 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
+// Determinar el base path según el entorno
+const isProduction = process.env.NODE_ENV === "production";
+const basePath = isProduction ? "/megara-studio" : "";
+
+console.log("🔧 Configuración de Astro:");
+console.log("  - NODE_ENV:", process.env.NODE_ENV);
+console.log("  - Base path:", basePath);
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://megara-studio.com",
-  // Solo usar base en producción, no en desarrollo
-  base: process.env.NODE_ENV === "production" ? "/megara-studio" : "",
+  base: basePath,
   integrations: [
     tailwind(),
     sitemap({
