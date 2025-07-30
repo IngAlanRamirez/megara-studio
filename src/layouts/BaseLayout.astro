@@ -1,0 +1,104 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Consultorio de sanación emocional, física y espiritual. Biodescodificación, biomagnetismo, tarot terapéutico y más.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background font-body text-neutral-dark min-h-screen">
+    <!-- Header -->
+    <header class="bg-surface shadow-sm border-b border-primary-light">
+      <nav class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-2xl font-display font-bold text-primary-dark">
+            Megara Studio
+          </a>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-neutral-dark hover:text-primary transition-colors duration-200"
+            >
+              Inicio
+            </a>
+            <a
+              href="/servicios"
+              class="text-neutral-dark hover:text-primary transition-colors duration-200"
+            >
+              Servicios
+            </a>
+            <a
+              href="/sobre-mi"
+              class="text-neutral-dark hover:text-primary transition-colors duration-200"
+            >
+              Sobre Mí
+            </a>
+            <a
+              href="/contacto"
+              class="text-neutral-dark hover:text-primary transition-colors duration-200"
+            >
+              Contacto
+            </a>
+          </div>
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark text-white py-8 mt-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-primary-light mb-2">
+            © 2024 Megara Studio - Consultorio de Sanación Integral
+          </p>
+          <p class="text-primary-light/80 text-sm">
+            Transformando vidas a través de la sanación holística
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+

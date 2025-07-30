@@ -1,37 +1,35 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Megara Studio</title>
-  </head>
-  <body class="bg-gray-100 min-h-screen">
-    <main class="container mx-auto px-4 py-8">
-      <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">
-        ¡Tailwind CSS está funcionando! 🎉
+<BaseLayout title="Megara Studio - Consultorio de Sanación Integral">
+  <div class="container mx-auto px-4 py-12">
+    <div class="text-center max-w-4xl mx-auto">
+      <h1
+        class="text-5xl md:text-6xl font-display font-bold text-primary-dark mb-6"
+      >
+        Sanación <span class="text-accent">Integral</span>
       </h1>
-      <div class="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto">
-        <p class="text-gray-600 text-center">
-          Tu proyecto Astro ahora tiene Tailwind CSS configurado correctamente.
-        </p>
-        <div class="mt-4 flex justify-center space-x-4">
-          <button
-            class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"
-          >
-            Botón Azul
-          </button>
-          <button
-            class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded transition-colors"
-          >
-            Botón Verde
-          </button>
-        </div>
+      <p class="text-xl text-neutral-dark mb-8 max-w-2xl mx-auto">
+        Bienvenida a tu espacio de transformación y sanación emocional, física y
+        espiritual
+      </p>
+      <p class="text-lg text-neutral-dark/80 mb-12 max-w-3xl mx-auto">
+        Descubre el poder de la biodescodificación, el biomagnetismo, el tarot
+        terapéutico y más técnicas holísticas para tu bienestar integral
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          class="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
+        >
+          Agendar Sesión
+        </button>
+        <button
+          class="bg-secondary hover:bg-secondary-dark text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
+        >
+          Conoce Mis Servicios
+        </button>
       </div>
-    </main>
-  </body>
-</html>
+    </div>
+  </div>
+</BaseLayout>
