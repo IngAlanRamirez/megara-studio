@@ -17,7 +17,7 @@ export default defineConfig({
     }),
   ],
   // Configuración para desarrollo local
-  devOptions: {
+  server: {
     port: 4321,
     host: true,
   },

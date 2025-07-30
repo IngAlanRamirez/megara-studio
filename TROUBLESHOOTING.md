@@ -144,6 +144,57 @@ Este documento te ayuda a resolver problemas comunes que pueden surgir durante e
    npm run build
    ```
 
+### **Error: "transport invoke timed out after 60000ms"**
+
+**Síntomas:**
+
+- El servidor de desarrollo se queda colgado
+- Timeout al cargar archivos
+- Errores de Vite al procesar módulos
+
+**Solución:**
+
+1. **Detener todos los procesos de Astro:**
+
+   ```bash
+   pkill -f "astro dev"
+   ```
+
+2. **Limpiar completamente el proyecto:**
+
+   ```bash
+   rm -rf node_modules package-lock.json dist/ .astro/ .vite/
+   ```
+
+3. **Reinstalar dependencias:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Verificar configuración:**
+
+   ```bash
+   npm run astro check
+   ```
+
+5. **Reiniciar servidor:**
+
+   ```bash
+   npm run dev
+   ```
+
+6. **Si el problema persiste:**
+
+   ```bash
+   # Verificar que estés en la rama correcta
+   git branch
+   git checkout develop
+
+   # Limpiar caché del navegador
+   # Presiona Ctrl+F5 (Windows) o Cmd+Shift+R (Mac)
+   ```
+
 ### **Error: "Git push failed"**
 
 **Síntomas:**
@@ -358,8 +409,11 @@ npm install
 # Limpiar build
 rm -rf dist/
 
-# Limpiar caché
-npm run astro clear
+# Limpiar caché completo
+rm -rf node_modules/.cache dist/ .astro/ .vite/
+
+# Detener procesos de Astro
+pkill -f "astro dev"
 ```
 
 ### **Desarrollo:**
