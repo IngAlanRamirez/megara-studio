@@ -1,0 +1,223 @@
+---
+import ImageSlider from "./ImageSlider.astro";
+import ImageSliderVariant from "./ImageSliderVariant.astro";
+import { heroSliderImages, sliderConfig } from "../data/sliderImages";
+
+// Ejemplo de uso del slider con diferentes configuraciones
+---
+
+<div class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 text-primary-dark">
+      Ejemplos del Slider de Imágenes
+    </h2>
+
+    <!-- Versión Rectangular con Difuminado -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-semibold mb-6 text-primary-dark text-center">
+        Versión Rectangular con Difuminado Diagonal
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Slider básico -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold mb-4 text-primary-dark">
+            Slider Básico
+          </h3>
+          <div class="flex justify-center">
+            <ImageSlider
+              images={heroSliderImages.slice(0, 3)}
+              autoplay={true}
+              autoplaySpeed={3000}
+              showDots={true}
+              showArrows={true}
+            />
+          </div>
+        </div>
+
+        <!-- Slider sin autoplay -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold mb-4 text-primary-dark">
+            Sin Autoplay
+          </h3>
+          <div class="flex justify-center">
+            <ImageSlider
+              images={heroSliderImages.slice(0, 3)}
+              autoplay={false}
+              showDots={true}
+              showArrows={true}
+            />
+          </div>
+        </div>
+
+        <!-- Slider solo con flechas -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold mb-4 text-primary-dark">
+            Solo Flechas
+          </h3>
+          <div class="flex justify-center">
+            <ImageSlider
+              images={heroSliderImages.slice(0, 3)}
+              autoplay={true}
+              autoplaySpeed={4000}
+              showDots={false}
+              showArrows={true}
+            />
+          </div>
+        </div>
+
+        <!-- Slider solo con puntos -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold mb-4 text-primary-dark">
+            Solo Puntos
+          </h3>
+          <div class="flex justify-center">
+            <ImageSlider
+              images={heroSliderImages.slice(0, 3)}
+              autoplay={true}
+              autoplaySpeed={6000}
+              showDots={true}
+              showArrows={false}
+            />
+          </div>
+        </div>
+
+        <!-- Slider con una sola imagen -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold mb-4 text-primary-dark">
+            Una Imagen
+          </h3>
+          <div class="flex justify-center">
+            <ImageSlider
+              images={heroSliderImages.slice(0, 1)}
+              autoplay={false}
+              showDots={false}
+              showArrows={false}
+            />
+          </div>
+        </div>
+
+        <!-- Slider con todas las imágenes -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold mb-4 text-primary-dark">
+            Todas las Imágenes
+          </h3>
+          <div class="flex justify-center">
+            <ImageSlider
+              images={heroSliderImages}
+              autoplay={true}
+              autoplaySpeed={3500}
+              showDots={true}
+              showArrows={true}
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Variantes de Difuminado -->
+      <div class="mt-12">
+        <h3 class="text-2xl font-semibold mb-6 text-primary-dark text-center">
+          Variantes de Intensidad de Difuminado
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Difuminado Ligero -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-lg font-semibold mb-4 text-primary-dark">
+              Difuminado Ligero
+            </h4>
+            <div class="flex justify-center">
+              <ImageSliderVariant
+                images={heroSliderImages.slice(0, 3)}
+                autoplay={true}
+                autoplaySpeed={4000}
+                showDots={true}
+                showArrows={true}
+                blurIntensity="light"
+              />
+            </div>
+          </div>
+
+          <!-- Difuminado Medio -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-lg font-semibold mb-4 text-primary-dark">
+              Difuminado Medio
+            </h4>
+            <div class="flex justify-center">
+              <ImageSliderVariant
+                images={heroSliderImages.slice(0, 3)}
+                autoplay={true}
+                autoplaySpeed={4000}
+                showDots={true}
+                showArrows={true}
+                blurIntensity="medium"
+              />
+            </div>
+          </div>
+
+          <!-- Difuminado Fuerte -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-lg font-semibold mb-4 text-primary-dark">
+              Difuminado Fuerte
+            </h4>
+            <div class="flex justify-center">
+              <ImageSliderVariant
+                images={heroSliderImages.slice(0, 3)}
+                autoplay={true}
+                autoplaySpeed={4000}
+                showDots={true}
+                showArrows={true}
+                blurIntensity="strong"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instrucciones de uso -->
+      <div class="mt-12 bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-4 text-primary-dark">
+          Cómo usar el Slider
+        </h3>
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            El componente <code>ImageSlider</code> acepta las siguientes props:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>images</strong>: Array de objetos con <code>src</code>, <code
+                >alt</code
+              > y <code>title</code> opcional
+            </li>
+            <li>
+              <strong>autoplay</strong>: Boolean para activar/desactivar
+              reproducción automática (default: true)
+            </li>
+            <li>
+              <strong>autoplaySpeed</strong>: Velocidad en milisegundos entre
+              transiciones (default: 5000)
+            </li>
+            <li>
+              <strong>showDots</strong>: Boolean para mostrar/ocultar
+              indicadores de puntos (default: true)
+            </li>
+            <li>
+              <strong>showArrows</strong>: Boolean para mostrar/ocultar flechas
+              de navegación (default: true)
+            </li>
+          </ul>
+
+          <div class="mt-6 p-4 bg-gray-100 rounded-lg">
+            <h4 class="font-semibold mb-2">Ejemplo de uso:</h4>
+            <pre
+              class="text-sm"><code>&lt;ImageSlider 
+  images={heroSliderImages}
+  autoplay={true}
+  autoplaySpeed={4000}
+  showDots={true}
+  showArrows={true}
+/&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,141 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Testimonios de Transformación",
+  subtitle = "Descubre las experiencias de sanación de nuestros clientes"
+} = Astro.props;
+
+const testimonios = [
+  {
+    id: 1,
+    name: "María Elena",
+    country: "México",
+    avatar: "🌺",
+    comment: "La biodescodificación cambió mi vida. Después de años de dolor crónico, finalmente encontré la raíz emocional y me liberé completamente. Megara tiene un don especial para conectar con el alma."
+  },
+  {
+    id: 2,
+    name: "Carlos Andrés",
+    country: "Colombia",
+    avatar: "🌿",
+    comment: "El biomagnetismo me ayudó a recuperar mi energía vital. Llegué agotado y estresado, y salí renovado. La sesión fue profunda y transformadora. Altamente recomendado."
+  },
+  {
+    id: 3,
+    name: "Ana Sofía",
+    country: "Argentina",
+    avatar: "🌙",
+    comment: "Los círculos de mujeres me conectaron con mi esencia femenina de una manera que nunca había experimentado. Es un espacio sagrado de sanación y empoderamiento."
+  },
+  {
+    id: 4,
+    name: "Luis Fernando",
+    country: "Chile",
+    avatar: "⭐",
+    comment: "Las constelaciones familiares me permitieron sanar heridas que arrastraba desde la infancia. Ahora tengo una relación mucho más sana con mi familia y conmigo mismo."
+  },
+  {
+    id: 5,
+    name: "Carmen Rosa",
+    country: "Perú",
+    avatar: "✨",
+    comment: "El Reiki me abrió un mundo de paz interior que no conocía. Cada sesión es una experiencia única de conexión espiritual. Megara transmite una energía increíble."
+  },
+  {
+    id: 6,
+    name: "Roberto José",
+    country: "Venezuela",
+    avatar: "🍃",
+    comment: "La sanación con cacao fue una experiencia mágica. Me conecté con mi corazón de una manera profunda y encontré claridad en decisiones importantes de mi vida."
+  }
+];
+---
+
+<section class="bg-primary-light/10 py-8 lg:py-16">
+  <div class="container mx-auto px-4">
+    <!-- Header de la sección -->
+    <div class="text-center mb-8">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-dark mb-6">
+        {title}
+      </h2>
+      <p class="text-xl text-neutral-dark/80 max-w-3xl mx-auto leading-relaxed">
+        {subtitle}
+      </p>
+    </div>
+
+    <!-- Grid de testimonios -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonios.map((testimonio) => (
+        <div class="bg-surface rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-primary-light/20 hover:border-primary-light/40">
+          <!-- Avatar y información del cliente -->
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 bg-primary-light/30 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl">{testimonio.avatar}</span>
+            </div>
+            <div>
+              <h4 class="font-display font-semibold text-primary-dark text-lg">
+                {testimonio.name}
+              </h4>
+              <p class="text-neutral-dark/70 text-sm flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                {testimonio.country}
+              </p>
+            </div>
+          </div>
+
+          <!-- Comentario -->
+          <div class="relative">
+            <!-- Comillas decorativas -->
+            <div class="absolute -top-2 -left-2 text-4xl text-primary-light/50">
+              "
+            </div>
+            <p class="text-neutral-dark/80 leading-relaxed pl-4">
+              {testimonio.comment}
+            </p>
+            <div class="absolute -bottom-2 -right-2 text-4xl text-primary-light/50">
+              "
+            </div>
+          </div>
+
+          <!-- Estrellas de calificación -->
+          <div class="flex items-center mt-6">
+            <div class="flex space-x-1">
+              {Array.from({ length: 5 }).map(() => (
+                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              ))}
+            </div>
+            <span class="text-sm text-neutral-dark/60 ml-2">Excelente</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA adicional -->
+    <div class="mt-8 text-center">
+      <div class="bg-surface rounded-2xl p-8 max-w-2xl mx-auto shadow-lg">
+        <h3 class="text-2xl font-display font-semibold text-primary-dark mb-4">
+          ¿Lista para tu transformación?
+        </h3>
+        <p class="text-neutral-dark/80 mb-6">
+          Únete a cientos de personas que ya han experimentado la sanación integral. Tu viaje hacia el bienestar comienza aquí.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/agendar" class="btn-primary">
+            Agenda tu sesión
+          </a>
+          <a href="/testimonios" class="btn-secondary">
+            Ver más testimonios
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

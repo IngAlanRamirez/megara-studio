@@ -1,0 +1,103 @@
+---
+import ImageSlider from "./ImageSlider.astro";
+import { heroSliderImages } from "../data/sliderImages";
+
+// Props opcionales para personalización
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  images?: Array<{
+    src: string;
+    alt: string;
+    title?: string;
+  }>;
+}
+
+const {
+  title = "Sana tu cuerpo, mente y alma desde cualquier lugar del mundo",
+  subtitle = "Terapias de sanación emocional, física y espiritual",
+  ctaText = "Reserva tu sesión",
+  ctaLink = "/agendar",
+  images = heroSliderImages,
+} = Astro.props;
+---
+
+<section class="bg-background py-12 lg:py-20">
+  <div class="container mx-auto px-4">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh]"
+    >
+      <!-- Contenido de texto -->
+      <div
+        class="text-center lg:text-left lg:pr-8 flex flex-col justify-center space-y-6"
+      >
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-dark leading-tight"
+        >
+          {title}
+        </h1>
+
+        <p
+          class="text-xl text-neutral-dark/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+        >
+          {subtitle}
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+        >
+          <a
+            href={ctaLink}
+            class="btn-primary inline-flex items-center justify-center group"
+          >
+            <span>{ctaText}</span>
+            <svg
+              class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+
+          <a
+            href="/servicios"
+            class="btn-secondary inline-flex items-center justify-center"
+          >
+            Conoce mis servicios
+          </a>
+        </div>
+
+        <!-- Elementos de confianza -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-8">
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-accent rounded-full"></div>
+            <span class="text-sm text-neutral-dark/70">Sesiones online</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-accent rounded-full"></div>
+            <span class="text-sm text-neutral-dark/70">Certificada</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-accent rounded-full"></div>
+            <span class="text-sm text-neutral-dark/70">+100 clientes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider de imágenes -->
+      <div
+        class="relative flex justify-center lg:justify-start items-center h-full"
+      >
+        <ImageSlider images={images} />
+      </div>
+    </div>
+  </div>
+</section>

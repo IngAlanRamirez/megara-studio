@@ -1,0 +1,529 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Configuración de contacto
+const contactInfo = {
+  email: "hola@megara-studio.com",
+  whatsapp: "+573001234567",
+  whatsappMessage: "Hola! Me gustaría contactarte para una consulta.",
+  location: "Sesiones online - Disponible en todo el mundo",
+};
+
+const whatsappLink = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(contactInfo.whatsappMessage)}`;
+---
+
+<BaseLayout
+  title="Contacto - Megara Studio | Consulta Gratuita de Sanación Holística"
+  description="Contáctame para comenzar tu viaje de sanación. Consulta gratuita disponible. Estoy aquí para escucharte y acompañarte en tu proceso de transformación."
+  type="website"
+>
+  <!-- Hero Section -->
+  <section class="bg-background py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-dark mb-6"
+        >
+          Estoy aquí para escucharte
+        </h1>
+        <p class="text-xl text-neutral-dark/80 mb-8 leading-relaxed">
+          Escríbeme y comencemos tu viaje de transformación. Cada mensaje es un
+          paso hacia tu sanación.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+              ></path>
+            </svg>
+            Contactar por WhatsApp
+          </a>
+          <a
+            href={`mailto:${contactInfo.email}`}
+            class="inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-dark font-medium rounded-lg border-2 border-primary-light hover:bg-primary-light/10 transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            <svg
+              class="w-6 h-6 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            Enviar email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de contacto -->
+  <section class="bg-surface py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Información de contacto -->
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-3xl font-display font-bold text-primary-dark mb-6">
+              Conectemos desde el corazón
+            </h2>
+            <p class="text-lg text-neutral-dark/80 leading-relaxed">
+              Cada consulta es única y personal. Cuéntame sobre ti y tus
+              necesidades, y juntas encontraremos el camino hacia tu sanación.
+            </p>
+          </div>
+
+          <!-- Información de contacto -->
+          <div class="space-y-6">
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-12 h-12 bg-primary-light/30 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-primary-dark">
+                  Email
+                </h3>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  class="text-neutral-dark/70 hover:text-primary transition-colors"
+                >
+                  {contactInfo.email}
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-primary-dark">
+                  WhatsApp
+                </h3>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-neutral-dark/70 hover:text-green-600 transition-colors"
+                >
+                  {contactInfo.whatsapp}
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-12 h-12 bg-secondary-light/50 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-primary-dark">
+                  Ubicación
+                </h3>
+                <p class="text-neutral-dark/70">{contactInfo.location}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Información adicional -->
+          <div class="bg-primary-light/20 rounded-xl p-6">
+            <h3 class="font-display font-semibold text-primary-dark mb-3">
+              💫 ¿Qué puedes esperar?
+            </h3>
+            <ul class="space-y-2 text-sm text-neutral-dark/80">
+              <li class="flex items-center space-x-2">
+                <span class="text-accent">•</span>
+                <span>Respuesta en menos de 24 horas</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-accent">•</span>
+                <span>Consulta inicial gratuita de 15 minutos</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-accent">•</span>
+                <span>Atención personalizada y confidencial</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-accent">•</span>
+                <span>Flexibilidad en horarios y métodos de pago</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div
+          class="bg-white rounded-xl shadow-lg p-8 border border-primary-light/20"
+        >
+          <h3
+            class="text-2xl font-display font-semibold text-primary-dark mb-6"
+          >
+            Envíame un mensaje
+          </h3>
+
+          <form id="contactForm" class="space-y-6">
+            <!-- Nombre -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-primary-dark mb-2"
+              >
+                Nombre completo *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                placeholder="Tu nombre completo"
+              />
+              <div id="nameError" class="text-red-500 text-sm mt-1 hidden">
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-primary-dark mb-2"
+              >
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                placeholder="tu@email.com"
+              />
+              <div id="emailError" class="text-red-500 text-sm mt-1 hidden">
+              </div>
+            </div>
+
+            <!-- Asunto -->
+            <div>
+              <label
+                for="subject"
+                class="block text-sm font-medium text-primary-dark mb-2"
+              >
+                Asunto
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+              >
+                <option value="">Selecciona un tema</option>
+                <option value="consulta-inicial">Consulta inicial</option>
+                <option value="agendar-sesion">Agendar sesión</option>
+                <option value="informacion-servicios"
+                  >Información sobre servicios</option
+                >
+                <option value="dudas-generales">Dudas generales</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <!-- Mensaje -->
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-primary-dark mb-2"
+              >
+                Mensaje *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                placeholder="Cuéntame sobre ti y cómo puedo ayudarte en tu proceso de sanación..."
+              ></textarea>
+              <div id="messageError" class="text-red-500 text-sm mt-1 hidden">
+              </div>
+            </div>
+
+            <!-- Botón enviar -->
+            <button
+              type="submit"
+              class="w-full btn-primary py-4 text-lg font-medium"
+            >
+              <span id="submitText">Enviar mensaje</span>
+              <span id="submitLoading" class="hidden">
+                <svg
+                  class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Enviando...
+              </span>
+            </button>
+          </form>
+
+          <!-- Mensaje de éxito/error -->
+          <div id="formMessage" class="mt-4 p-4 rounded-lg hidden">
+            <div
+              id="successMessage"
+              class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded hidden"
+            >
+              <div class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>¡Mensaje enviado con éxito! Te responderé pronto.</span>
+              </div>
+            </div>
+            <div
+              id="errorMessage"
+              class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded hidden"
+            >
+              <div class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span
+                  >Hubo un error al enviar el mensaje. Inténtalo de nuevo.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Validación del formulario
+  const form = document.getElementById("contactForm");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const messageInput = document.getElementById("message");
+  const submitButton = document.getElementById("submitText");
+  const submitLoading = document.getElementById("submitLoading");
+  const formMessage = document.getElementById("formMessage");
+  const successMessage = document.getElementById("successMessage");
+  const errorMessage = document.getElementById("errorMessage");
+
+  // Funciones de validación
+  function showError(inputId: string, message: string) {
+    const errorElement = document.getElementById(inputId + "Error");
+    const inputElement = document.getElementById(inputId);
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.remove("hidden");
+    }
+    if (inputElement) {
+      inputElement.classList.add("border-red-500");
+    }
+  }
+
+  function hideError(inputId: string) {
+    const errorElement = document.getElementById(inputId + "Error");
+    const inputElement = document.getElementById(inputId);
+    if (errorElement) {
+      errorElement.classList.add("hidden");
+    }
+    if (inputElement) {
+      inputElement.classList.remove("border-red-500");
+    }
+  }
+
+  function validateEmail(email: string) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  function validateForm() {
+    let isValid = true;
+
+    // Validar nombre
+    const nameValue = (nameInput as HTMLInputElement)?.value?.trim() || "";
+    if (!nameValue) {
+      showError("name", "El nombre es obligatorio");
+      isValid = false;
+    } else if (nameValue.length < 2) {
+      showError("name", "El nombre debe tener al menos 2 caracteres");
+      isValid = false;
+    } else {
+      hideError("name");
+    }
+
+    // Validar email
+    const emailValue = (emailInput as HTMLInputElement)?.value?.trim() || "";
+    if (!emailValue) {
+      showError("email", "El email es obligatorio");
+      isValid = false;
+    } else if (!validateEmail(emailValue)) {
+      showError("email", "Ingresa un email válido");
+      isValid = false;
+    } else {
+      hideError("email");
+    }
+
+    // Validar mensaje
+    const messageValue =
+      (messageInput as HTMLTextAreaElement)?.value?.trim() || "";
+    if (!messageValue) {
+      showError("message", "El mensaje es obligatorio");
+      isValid = false;
+    } else if (messageValue.length < 10) {
+      showError("message", "El mensaje debe tener al menos 10 caracteres");
+      isValid = false;
+    } else {
+      hideError("message");
+    }
+
+    return isValid;
+  }
+
+  // Event listeners para validación en tiempo real
+  nameInput?.addEventListener("blur", () => {
+    const input = nameInput as HTMLInputElement;
+    if (input.value.trim()) {
+      if (input.value.trim().length < 2) {
+        showError("name", "El nombre debe tener al menos 2 caracteres");
+      } else {
+        hideError("name");
+      }
+    }
+  });
+
+  emailInput?.addEventListener("blur", () => {
+    const input = emailInput as HTMLInputElement;
+    if (input.value.trim()) {
+      if (!validateEmail(input.value.trim())) {
+        showError("email", "Ingresa un email válido");
+      } else {
+        hideError("email");
+      }
+    }
+  });
+
+  messageInput?.addEventListener("blur", () => {
+    const textarea = messageInput as HTMLTextAreaElement;
+    if (textarea.value.trim()) {
+      if (textarea.value.trim().length < 10) {
+        showError("message", "El mensaje debe tener al menos 10 caracteres");
+      } else {
+        hideError("message");
+      }
+    }
+  });
+
+  // Manejo del envío del formulario
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    // Mostrar estado de carga
+    submitButton?.classList.add("hidden");
+    submitLoading?.classList.remove("hidden");
+    formMessage?.classList.add("hidden");
+
+    try {
+      // Simular envío (aquí iría la lógica real de envío)
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Mostrar mensaje de éxito
+      successMessage?.classList.remove("hidden");
+      formMessage?.classList.remove("hidden");
+      (form as HTMLFormElement)?.reset();
+    } catch (error) {
+      // Mostrar mensaje de error
+      errorMessage?.classList.remove("hidden");
+      formMessage?.classList.remove("hidden");
+    } finally {
+      // Restaurar botón
+      submitButton?.classList.remove("hidden");
+      submitLoading?.classList.add("hidden");
+    }
+  });
+</script>

@@ -1,0 +1,117 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Nuestros Servicios de Sanación",
+  subtitle = "Descubre las diferentes terapias holísticas que ofrecemos para tu bienestar integral",
+} = Astro.props;
+
+const servicios = [
+  {
+    id: "biodescodificacion",
+    title: "Biodescodificación",
+    description:
+      "Descubre el origen emocional de tus síntomas físicos y libera los patrones que limitan tu bienestar",
+    icon: "🌱",
+  },
+  {
+    id: "biomagnetismo",
+    title: "Biomagnetismo",
+    description:
+      "Equilibra tu campo magnético corporal para restaurar la salud y el balance energético",
+    icon: "🧲",
+  },
+  {
+    id: "tarot-terapeutico",
+    title: "Tarot Terapéutico",
+    description:
+      "Explora tu inconsciente y encuentra claridad en tu camino de vida a través de la sabiduría ancestral",
+    icon: "🔮",
+  },
+  {
+    id: "circulos-mujeres",
+    title: "Círculos de Mujeres",
+    description:
+      "Conecta con tu esencia femenina en un espacio sagrado de sororidad y empoderamiento",
+    icon: "🌙",
+  },
+  {
+    id: "constelaciones",
+    title: "Constelaciones",
+    description:
+      "Sanar las heridas familiares y liberar patrones transgeneracionales que afectan tu presente",
+    icon: "⭐",
+  },
+  {
+    id: "reiki",
+    title: "Reiki",
+    description:
+      "Recibe la energía universal de sanación para equilibrar tu cuerpo, mente y espíritu",
+    icon: "✨",
+  },
+  {
+    id: "sanacion-cacao",
+    title: "Sanación con Cacao",
+    description:
+      "Experimenta la medicina sagrada del cacao para abrir tu corazón y conectar con tu sabiduría interior",
+    icon: "🍫",
+  },
+];
+---
+
+<section class="bg-background py-20 lg:py-32">
+  <div class="container mx-auto px-4">
+    <!-- Header de la sección -->
+    <div class="text-center mb-16">
+      <h2
+        class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-dark mb-6"
+      >
+        {title}
+      </h2>
+      <p class="text-xl text-neutral-dark/80 max-w-3xl mx-auto leading-relaxed">
+        {subtitle}
+      </p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+    >
+      {servicios.map((servicio) => <ServiceCard service={servicio} />)}
+    </div>
+
+    <!-- CTA adicional -->
+    <div class="mt-16 text-center">
+      <div class="bg-primary-light/20 rounded-2xl p-8 max-w-2xl mx-auto">
+        <h3 class="text-2xl font-display font-semibold text-primary-dark mb-4">
+          ¿No encuentras lo que buscas?
+        </h3>
+        <p class="text-neutral-dark/80 mb-6">
+          Cada persona es única. Agenda una consulta personalizada para
+          descubrir qué terapia es la más adecuada para ti.
+        </p>
+        <a href="/contacto" class="btn-primary inline-flex items-center">
+          Consulta personalizada
+          <svg
+            class="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+

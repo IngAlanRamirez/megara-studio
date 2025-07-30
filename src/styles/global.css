@@ -1,3 +1,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilos base personalizados */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Lora", serif;
+    line-height: 1.6;
+    color: #2f2f2f;
+    background-color: #fffdf8;
+  }
+}
+
+/* Componentes personalizados */
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  .btn-primary {
+    background-color: #a3c49a;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary:hover {
+    background-color: #718463;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: #2f2f2f;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    border: 2px solid #ddebd6;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(221, 235, 214, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Utilidades personalizadas */
+@layer utilities {
+  .text-primary {
+    color: #a3c49a;
+  }
+
+  .text-primary-dark {
+    color: #718463;
+  }
+
+  .text-secondary {
+    color: #c6b2d6;
+  }
+
+  .text-accent {
+    color: #e9c46a;
+  }
+
+  .bg-primary {
+    background-color: #a3c49a;
+  }
+
+  .bg-primary-dark {
+    background-color: #718463;
+  }
+
+  .bg-primary-light {
+    background-color: #ddebd6;
+  }
+
+  .bg-secondary {
+    background-color: #c6b2d6;
+  }
+
+  .bg-secondary-light {
+    background-color: #efe6f5;
+  }
+
+  .bg-accent {
+    background-color: #e9c46a;
+  }
+
+  .bg-background {
+    background-color: #fffdf8;
+  }
+
+  .bg-surface {
+    background-color: #ffffff;
+  }
+
+  .font-display {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .font-body {
+    font-family: "Lora", serif;
+  }
+}

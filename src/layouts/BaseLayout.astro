@@ -1,13 +1,25 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: string;
 }
 
 const {
   title,
   description = "Consultorio de sanación emocional, física y espiritual. Biodescodificación, biomagnetismo, tarot terapéutico y más.",
+  image = "/assets/logo/megara_studio.jpeg",
+  canonicalURL = Astro.url,
+  type = "website",
 } = Astro.props;
+
+// Construir URL canónica
+const canonical = new URL(canonicalURL, Astro.site);
 ---
 
 <!doctype html>
@@ -17,8 +29,35 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Básico -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:site_name" content="Megara Studio" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Meta adicionales -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Megara Studio" />
+    <meta
+      name="keywords"
+      content="sanación holística, biodescodificación, biomagnetismo, reiki, tarot terapéutico, constelaciones, círculos de mujeres, sanación con cacao"
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,57 +68,8 @@ const {
     />
   </head>
   <body class="bg-background font-body text-neutral-dark min-h-screen">
-    <!-- Header -->
-    <header class="bg-surface shadow-sm border-b border-primary-light">
-      <nav class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-          <a href="/" class="text-2xl font-display font-bold text-primary-dark">
-            Megara Studio
-          </a>
-          <div class="hidden md:flex items-center space-x-8">
-            <a
-              href="/"
-              class="text-neutral-dark hover:text-primary transition-colors duration-200"
-            >
-              Inicio
-            </a>
-            <a
-              href="/servicios"
-              class="text-neutral-dark hover:text-primary transition-colors duration-200"
-            >
-              Servicios
-            </a>
-            <a
-              href="/sobre-mi"
-              class="text-neutral-dark hover:text-primary transition-colors duration-200"
-            >
-              Sobre Mí
-            </a>
-            <a
-              href="/contacto"
-              class="text-neutral-dark hover:text-primary transition-colors duration-200"
-            >
-              Contacto
-            </a>
-          </div>
-          <!-- Mobile menu button -->
-          <button class="md:hidden p-2">
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
-    </header>
+    <!-- Navbar -->
+    <Navbar />
 
     <!-- Main Content -->
     <main>
@@ -101,4 +91,3 @@ const {
     </footer>
   </body>
 </html>
-

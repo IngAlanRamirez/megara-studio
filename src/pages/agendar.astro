@@ -1,0 +1,284 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AgendaTuSesion from "../components/AgendaTuSesion.astro";
+---
+
+<BaseLayout
+  title="Agendar Sesión - Megara Studio"
+  description="Agenda tu sesión de sanación holística. Ofrecemos sesiones online vía videollamada con horarios flexibles. Biodescodificación, biomagnetismo, reiki y más."
+>
+  <!-- Hero Section -->
+  <section class="bg-primary-light/10 py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-dark mb-6"
+        >
+          Agenda tu Sesión
+        </h1>
+        <p class="text-xl text-neutral-dark/80 mb-8 leading-relaxed">
+          El primer paso hacia tu transformación comienza aquí. Elige el momento
+          perfecto para comenzar tu viaje de sanación.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#agendar" class="btn-primary"> Ver horarios disponibles </a>
+          <a href="/contacto" class="btn-secondary"> Dudas sobre el proceso </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Agendamiento -->
+  <div id="agendar">
+    <AgendaTuSesion />
+  </div>
+
+  <!-- Información Adicional -->
+  <section class="bg-surface py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Información -->
+        <div>
+          <h2
+            class="text-3xl md:text-4xl font-display font-bold text-primary-dark mb-6"
+          >
+            ¿Por qué agendar con Megara?
+          </h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-primary-dark mb-2">
+                  Experiencia Comprobada
+                </h3>
+                <p class="text-neutral-dark/80">
+                  Más de 10 años de experiencia en terapias holísticas y cientos
+                  de clientes satisfechos.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-primary-dark mb-2">
+                  Enfoque Personalizado
+                </h3>
+                <p class="text-neutral-dark/80">
+                  Cada sesión se adapta a tus necesidades específicas y tu
+                  proceso único de sanación.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-primary-dark mb-2">
+                  Resultados Transformadores
+                </h3>
+                <p class="text-neutral-dark/80">
+                  Testimonios reales de clientes que han experimentado cambios
+                  profundos en sus vidas.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-primary-dark mb-2">
+                  Acompañamiento Continuo
+                </h3>
+                <p class="text-neutral-dark/80">
+                  No solo una sesión, sino un proceso de acompañamiento para tu
+                  crecimiento personal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio destacado -->
+        <div class="bg-primary-light/20 rounded-2xl p-8">
+          <div class="flex items-center mb-6">
+            <div
+              class="w-16 h-16 bg-primary-light/30 rounded-full flex items-center justify-center mr-4"
+            >
+              <span class="text-2xl">💫</span>
+            </div>
+            <div>
+              <h4 class="font-display font-semibold text-primary-dark">
+                María Elena
+              </h4>
+              <p class="text-neutral-dark/70 text-sm">Cliente desde 2022</p>
+            </div>
+          </div>
+
+          <blockquote class="text-neutral-dark/80 italic mb-6">
+            "Agendar con Megara fue el mejor paso que di para mi sanación. Su
+            profesionalismo y empatía me hicieron sentir segura desde el primer
+            momento. Los resultados han sido increíbles."
+          </blockquote>
+
+          <div class="flex space-x-1">
+            {
+              Array.from({ length: 5 }).map(() => (
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-background py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl md:text-4xl font-display font-bold text-primary-dark mb-6"
+        >
+          Preguntas Frecuentes
+        </h2>
+        <p
+          class="text-xl text-neutral-dark/80 max-w-3xl mx-auto leading-relaxed"
+        >
+          Resolvemos las dudas más comunes sobre el proceso de agendamiento
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div
+          class="bg-surface rounded-xl p-6 shadow-lg border border-primary-light/20"
+        >
+          <h3 class="text-lg font-display font-semibold text-primary-dark mb-3">
+            ¿Cómo funciona el agendamiento online?
+          </h3>
+          <p class="text-neutral-dark/80">
+            Una vez que agendes tu sesión, recibirás un enlace de Zoom 15
+            minutos antes de la cita. Solo necesitas un espacio tranquilo y
+            buena conexión a internet.
+          </p>
+        </div>
+
+        <div
+          class="bg-surface rounded-xl p-6 shadow-lg border border-primary-light/20"
+        >
+          <h3 class="text-lg font-display font-semibold text-primary-dark mb-3">
+            ¿Qué necesito preparar para mi sesión?
+          </h3>
+          <p class="text-neutral-dark/80">
+            Un espacio privado y tranquilo, papel y lápiz para tomar notas, y
+            llegar 5 minutos antes para prepararte mentalmente para la sesión.
+          </p>
+        </div>
+
+        <div
+          class="bg-surface rounded-xl p-6 shadow-lg border border-primary-light/20"
+        >
+          <h3 class="text-lg font-display font-semibold text-primary-dark mb-3">
+            ¿Puedo cancelar o reprogramar mi cita?
+          </h3>
+          <p class="text-neutral-dark/80">
+            Sí, puedes cancelar o reprogramar tu cita hasta 24 horas antes sin
+            ningún cargo. Solo contáctame por WhatsApp o email.
+          </p>
+        </div>
+
+        <div
+          class="bg-surface rounded-xl p-6 shadow-lg border border-primary-light/20"
+        >
+          <h3 class="text-lg font-display font-semibold text-primary-dark mb-3">
+            ¿Qué métodos de pago aceptan?
+          </h3>
+          <p class="text-neutral-dark/80">
+            Aceptamos transferencias bancarias, PayPal, y pagos en efectivo para
+            sesiones presenciales. El pago se realiza antes de la sesión.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="bg-primary-light/10 py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2
+          class="text-3xl md:text-4xl font-display font-bold text-primary-dark mb-6"
+        >
+          ¿Lista para comenzar tu transformación?
+        </h2>
+        <p class="text-xl text-neutral-dark/80 mb-8 leading-relaxed">
+          Cada sesión es un paso hacia tu mejor versión. No esperes más para
+          comenzar tu viaje de sanación.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#agendar" class="btn-primary"> Agendar ahora </a>
+          <a href="/contacto" class="btn-secondary"> Tengo dudas </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

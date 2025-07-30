@@ -1,0 +1,303 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Newsletter from "../components/Newsletter.astro";
+
+// Datos de artículos del blog
+const articulos = [
+  {
+    id: "sanacion-emocional",
+    title: "Sanación Emocional: El Camino hacia la Libertad Interior",
+    excerpt: "Descubre cómo liberar las emociones bloqueadas y encontrar la paz interior que mereces.",
+    content: "La sanación emocional es un proceso profundo que nos permite liberar las cargas del pasado y vivir en el presente con mayor plenitud...",
+    author: "Megara",
+    date: "2024-01-15",
+    category: "Sanación",
+    readTime: "5 min",
+    image: "🌱"
+  },
+  {
+    id: "biodescodificacion-guia",
+    title: "Biodescodificación: Una Guía Completa para Principiantes",
+    excerpt: "Todo lo que necesitas saber sobre esta poderosa herramienta de sanación emocional.",
+    content: "La biodescodificación es una terapia que busca el origen emocional de las enfermedades físicas...",
+    author: "Megara",
+    date: "2024-01-10",
+    category: "Biodescodificación",
+    readTime: "8 min",
+    image: "🧬"
+  },
+  {
+    id: "energia-femenina",
+    title: "Reconectando con tu Energía Femenina Sagrada",
+    excerpt: "Explora la sabiduría ancestral femenina y descubre tu poder interior.",
+    content: "En un mundo que ha olvidado la importancia de la energía femenina, es crucial reconectar con esta fuerza sagrada...",
+    author: "Megara",
+    date: "2024-01-05",
+    category: "Empoderamiento",
+    readTime: "6 min",
+    image: "🌙"
+  },
+  {
+    id: "limpieza-energetica",
+    title: "Limpieza Energética: Técnicas para Purificar tu Campo",
+    excerpt: "Aprende técnicas simples y efectivas para mantener tu energía limpia y equilibrada.",
+    content: "Nuestro campo energético absorbe constantemente energías del entorno y de las personas que nos rodean...",
+    author: "Megara",
+    date: "2023-12-28",
+    category: "Energía",
+    readTime: "7 min",
+    image: "✨"
+  },
+  {
+    id: "constelaciones-familiares",
+    title: "Constelaciones Familiares: Sanando las Heridas del Pasado",
+    excerpt: "Cómo liberar los patrones familiares que afectan tu presente y futuro.",
+    content: "Las constelaciones familiares nos revelan los patrones inconscientes que heredamos de nuestro sistema familiar...",
+    author: "Megara",
+    date: "2023-12-20",
+    category: "Constelaciones",
+    readTime: "9 min",
+    image: "⭐"
+  },
+  {
+    id: "autocuidado-holistico",
+    title: "Autocuidado Holístico: Nutriendo Cuerpo, Mente y Espíritu",
+    excerpt: "Prácticas diarias para mantener el equilibrio en todas las dimensiones de tu ser.",
+    content: "El autocuidado holístico va más allá de los cuidados físicos básicos...",
+    author: "Megara",
+    date: "2023-12-15",
+    category: "Bienestar",
+    readTime: "6 min",
+    image: "💝"
+  }
+];
+
+// Categorías disponibles
+const categorias = [
+  { id: "todos", name: "Todos", count: articulos.length },
+  { id: "sanacion", name: "Sanación", count: articulos.filter(a => a.category === "Sanación").length },
+  { id: "biodescodificacion", name: "Biodescodificación", count: articulos.filter(a => a.category === "Biodescodificación").length },
+  { id: "empoderamiento", name: "Empoderamiento", count: articulos.filter(a => a.category === "Empoderamiento").length },
+  { id: "energia", name: "Energía", count: articulos.filter(a => a.category === "Energía").length },
+  { id: "constelaciones", name: "Constelaciones", count: articulos.filter(a => a.category === "Constelaciones").length },
+  { id: "bienestar", name: "Bienestar", count: articulos.filter(a => a.category === "Bienestar").length }
+];
+
+// Función para formatear fecha
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+---
+
+<BaseLayout 
+  title="Blog - Megara Studio" 
+  description="Artículos sobre sanación holística, bienestar emocional y transformación personal. Descubre herramientas prácticas para tu crecimiento espiritual."
+>
+  <!-- Hero Section -->
+  <section class="bg-primary-light/10 py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-dark mb-6">
+          Blog de Sanación
+        </h1>
+        <p class="text-xl text-neutral-dark/80 mb-8 leading-relaxed">
+          Artículos sobre bienestar holístico, herramientas de sanación y transformación personal. 
+          Conoce técnicas prácticas para tu crecimiento espiritual.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#articulos" class="btn-primary">
+            Explorar artículos
+          </a>
+          <a href="/contacto" class="btn-secondary">
+            Suscríbete al blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtros de Categorías -->
+  <section class="bg-surface py-12 border-b border-primary-light/20">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center gap-4">
+        {categorias.map((categoria) => (
+          <button
+            class="px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 hover:bg-primary hover:text-white bg-primary-light/20 text-primary-dark"
+            data-category={categoria.id}
+          >
+            {categoria.name} ({categoria.count})
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Artículos -->
+  <section id="articulos" class="bg-background py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {articulos.map((articulo) => (
+          <article class="bg-surface rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-primary-light/20">
+            <!-- Imagen del artículo -->
+            <div class="h-48 bg-primary-light/20 flex items-center justify-center">
+              <span class="text-6xl">{articulo.image}</span>
+            </div>
+            
+            <!-- Contenido -->
+            <div class="p-6">
+              <!-- Meta información -->
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-sm text-primary-dark font-medium bg-primary-light/20 px-3 py-1 rounded-full">
+                  {articulo.category}
+                </span>
+                <span class="text-sm text-neutral-dark/60">
+                  {articulo.readTime}
+                </span>
+              </div>
+              
+              <!-- Título -->
+              <h2 class="text-xl font-display font-semibold text-primary-dark mb-3 line-clamp-2">
+                {articulo.title}
+              </h2>
+              
+              <!-- Extracto -->
+              <p class="text-neutral-dark/80 mb-4 line-clamp-3">
+                {articulo.excerpt}
+              </p>
+              
+              <!-- Autor y fecha -->
+              <div class="flex items-center justify-between text-sm text-neutral-dark/60 mb-4">
+                <span>Por {articulo.author}</span>
+                <span>{formatDate(articulo.date)}</span>
+              </div>
+              
+              <!-- Botón leer más -->
+              <a 
+                href={`/blog/${articulo.id}`}
+                class="inline-flex items-center text-primary-dark hover:text-primary font-medium transition-colors duration-200"
+              >
+                Leer más
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <Newsletter />
+
+  <!-- Artículos Destacados -->
+  <section class="bg-surface py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary-dark mb-6">
+          Artículos Destacados
+        </h2>
+        <p class="text-xl text-neutral-dark/80 max-w-3xl mx-auto leading-relaxed">
+          Los artículos más populares y transformadores de nuestro blog
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {articulos.slice(0, 2).map((articulo) => (
+          <article class="bg-background rounded-xl p-8 shadow-lg border border-primary-light/20">
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-16 h-16 bg-primary-light/30 rounded-full flex items-center justify-center">
+                <span class="text-2xl">{articulo.image}</span>
+              </div>
+              <div>
+                <span class="text-sm text-primary-dark font-medium bg-primary-light/20 px-3 py-1 rounded-full">
+                  {articulo.category}
+                </span>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-display font-semibold text-primary-dark mb-4">
+              {articulo.title}
+            </h3>
+            
+            <p class="text-neutral-dark/80 mb-6 leading-relaxed">
+              {articulo.excerpt}
+            </p>
+            
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-neutral-dark/60">
+                <span>Por {articulo.author}</span>
+                <span class="mx-2">•</span>
+                <span>{formatDate(articulo.date)}</span>
+              </div>
+              <a 
+                href={`/blog/${articulo.id}`}
+                class="btn-primary text-sm"
+              >
+                Leer artículo completo
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary-light/10 py-20 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary-dark mb-6">
+          ¿Te gustaría profundizar más?
+        </h2>
+        <p class="text-xl text-neutral-dark/80 mb-8 leading-relaxed">
+          Si estos artículos te han resonado, imagina lo que una sesión personalizada puede hacer por ti.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contacto" class="btn-primary">
+            Agenda una consulta
+          </a>
+          <a href="/servicios" class="btn-secondary">
+            Conoce mis servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Funcionalidad de filtros (opcional)
+  const filterButtons = document.querySelectorAll('[data-category]');
+  const articles = document.querySelectorAll('article');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+      
+      // Actualizar botones activos
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-white');
+        btn.classList.add('bg-primary-light/20', 'text-primary-dark');
+      });
+      button.classList.remove('bg-primary-light/20', 'text-primary-dark');
+      button.classList.add('bg-primary', 'text-white');
+      
+      // Filtrar artículos (implementación básica)
+      if (category === 'todos') {
+        articles.forEach(article => {
+          article.style.display = 'block';
+        });
+      } else {
+        // Aquí se implementaría la lógica de filtrado real
+        console.log('Filtrando por:', category);
+      }
+    });
+  });
+</script> 
