@@ -1,10 +1,37 @@
-# Astro Starter Kit: Minimal
+# 🌟 Megara Studio - Sitio Web
 
-```sh
-bun create astro@latest -- --template minimal
+Sitio web profesional para Megara Studio, consultorio de sanación emocional, física y espiritual.
+
+## 🎯 Características
+
+- ✅ **Diseño Moderno y Espiritual** - Colores suaves y elementos visuales armoniosos
+- ✅ **Sistema de Contenido Centralizado** - Todo el contenido en un archivo JSON
+- ✅ **Responsive Design** - Optimizado para móviles y escritorio
+- ✅ **SEO Optimizado** - Meta tags, sitemap y estructura semántica
+- ✅ **Despliegue Automatizado** - Scripts para GitHub Pages
+- ✅ **Componentes Reutilizables** - Arquitectura modular y escalable
+
+## 🚀 Despliegue Rápido
+
+### **Verificar Preparación:**
+
+```bash
+npm run check-deploy
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### **Desplegar a GitHub Pages:**
+
+```bash
+# macOS/Linux
+npm run deploy
+
+# Windows
+npm run deploy:win
+```
+
+### **Ver Documentación Completa:**
+
+Consulta [DEPLOYMENT.md](./DEPLOYMENT.md) para instrucciones detalladas.
 
 ## 🚀 Project Structure
 
@@ -25,19 +52,57 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## 🧞 Comandos Disponibles
 
-All commands are run from the root of the project, from a terminal:
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+| Comando                | Acción                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Instalar dependencias                              |
+| `npm run dev`          | Iniciar servidor de desarrollo en `localhost:4321` |
+| `npm run build`        | Construir sitio para producción en `./dist/`       |
+| `npm run preview`      | Previsualizar build localmente                     |
+| `npm run deploy`       | Desplegar a GitHub Pages (macOS/Linux)             |
+| `npm run deploy:win`   | Desplegar a GitHub Pages (Windows)                 |
+| `npm run check-deploy` | Verificar preparación para despliegue              |
+| `npm run check-images` | Verificar accesibilidad de imágenes                |
+| `npm run check-config` | Verificar configuración de Astro                   |
+| `npm run astro ...`    | Ejecutar comandos CLI de Astro                     |
 
-## 👀 Want to learn more?
+## 📁 Estructura del Proyecto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+megara-studio/
+├── src/
+│   ├── components/          # Componentes reutilizables
+│   ├── data/
+│   │   └── content.json     # Contenido centralizado
+│   ├── utils/
+│   │   └── content.ts       # Utilidades de contenido
+│   ├── layouts/             # Layouts de página
+│   └── pages/               # Páginas del sitio
+├── scripts/
+│   ├── deploy.sh            # Script de despliegue (macOS/Linux)
+│   ├── deploy.bat           # Script de despliegue (Windows)
+│   └── check-deploy.sh      # Script de verificación
+├── public/                  # Archivos estáticos
+└── package.json
+```
+
+## 📚 Documentación Adicional
+
+- 📖 [Guía de Despliegue](./DEPLOYMENT.md) - Instrucciones detalladas para GitHub Pages
+- 📖 [Gestión de Contenido](./CONTENT_MANAGEMENT.md) - Cómo modificar el contenido del sitio
+- 🔧 [Solución de Problemas](./TROUBLESHOOTING.md) - Resolver problemas comunes
+- 📖 [Documentación de Astro](https://docs.astro.build) - Framework oficial
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Astro** - Framework web moderno
+- **Tailwind CSS** - Framework de CSS utilitario
+- **TypeScript** - Tipado estático
+- **GitHub Pages** - Hosting gratuito
+
+---
+
+**¡Tu sitio de Megara Studio está listo para el mundo! 🌟**

@@ -5,8 +5,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:prod": "NODE_ENV=production astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "bash scripts/deploy.sh",
+    "deploy:win": "scripts/deploy.bat",
+    "deploy:force": "bash scripts/deploy.sh --force",
+    "check-deploy": "bash scripts/check-deploy.sh",
+    "check-images": "bash scripts/check-images.sh",
+    "check-config": "bash scripts/check-config.sh"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.2",
