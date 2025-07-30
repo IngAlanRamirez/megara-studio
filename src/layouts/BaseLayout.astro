@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
+import { getSiteInfo } from "../utils/content";
 
 export interface Props {
   title: string;
@@ -10,9 +11,11 @@ export interface Props {
   type?: string;
 }
 
+const siteInfo = getSiteInfo();
+
 const {
   title,
-  description = "Consultorio de sanación emocional, física y espiritual. Biodescodificación, biomagnetismo, tarot terapéutico y más.",
+  description = siteInfo.description,
   image = "/assets/logo/megara_studio.jpeg",
   canonicalURL = Astro.url,
   type = "website",
@@ -41,7 +44,7 @@ const canonical = new URL(canonicalURL, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
-    <meta property="og:site_name" content="Megara Studio" />
+    <meta property="og:site_name" content={siteInfo.name} />
     <meta property="og:locale" content="es_ES" />
 
     <!-- Twitter -->
@@ -53,11 +56,8 @@ const canonical = new URL(canonicalURL, Astro.site);
 
     <!-- Meta adicionales -->
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="Megara Studio" />
-    <meta
-      name="keywords"
-      content="sanación holística, biodescodificación, biomagnetismo, reiki, tarot terapéutico, constelaciones, círculos de mujeres, sanación con cacao"
-    />
+    <meta name="author" content={siteInfo.name} />
+    <meta name="keywords" content={siteInfo.keywords} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -81,10 +81,10 @@ const canonical = new URL(canonicalURL, Astro.site);
       <div class="container mx-auto px-4">
         <div class="text-center">
           <p class="text-primary-light mb-2">
-            © 2024 Megara Studio - Consultorio de Sanación Integral
+            © 2024 {siteInfo.name} - {siteInfo.tagline}
           </p>
           <p class="text-primary-light/80 text-sm">
-            Transformando vidas a través de la sanación holística
+            {siteInfo.description}
           </p>
         </div>
       </div>

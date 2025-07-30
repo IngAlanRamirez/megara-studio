@@ -1,0 +1,109 @@
+---
+import { getTrustContent } from "../utils/content";
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const trustContent = getTrustContent();
+
+const {
+  title = trustContent.title,
+  subtitle = trustContent.subtitle,
+} = Astro.props;
+---
+
+<section class="bg-background py-12 lg:py-20">
+  <div class="container mx-auto px-4">
+    <!-- Header de la sección -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-dark mb-6">
+        {title}
+      </h2>
+      <p class="text-xl text-neutral-dark/80 max-w-3xl mx-auto leading-relaxed">
+        {subtitle}
+      </p>
+    </div>
+
+    <!-- Grid de credenciales -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {trustContent.credentials.map((credential) => (
+        <div class="text-center group">
+          <!-- Ícono -->
+          <div class="mb-6">
+            <div class="w-20 h-20 bg-primary-light/30 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary-light/50 transition-colors duration-300">
+              <span class="text-3xl">{credential.icon}</span>
+            </div>
+          </div>
+
+          <!-- Título -->
+          <h3 class="text-xl font-display font-semibold text-primary-dark mb-4 group-hover:text-primary transition-colors duration-300">
+            {credential.title}
+          </h3>
+
+          <!-- Descripción -->
+          <p class="text-neutral-dark/80 leading-relaxed">
+            {credential.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sección de certificaciones -->
+    <div class="bg-primary-light/10 rounded-2xl p-8 lg:p-12 mb-12">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl lg:text-3xl font-display font-semibold text-primary-dark mb-4">
+          {trustContent.certifications.title}
+        </h3>
+        <p class="text-neutral-dark/80 max-w-2xl mx-auto">
+          {trustContent.certifications.description}
+        </p>
+      </div>
+
+      <!-- Lista de certificaciones -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {trustContent.certifications.items.map((certification) => (
+          <div class="flex items-center space-x-3 bg-white/50 rounded-lg p-4">
+            <div class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
+            <span class="text-neutral-dark/80 font-medium">{certification}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <div class="bg-primary-light/20 rounded-xl p-8 max-w-2xl mx-auto">
+        <h3 class="text-2xl font-display font-semibold text-primary-dark mb-4">
+          {trustContent.cta.text}
+        </h3>
+        <a href="/sobre-megara" class="btn-primary inline-flex items-center">
+          {trustContent.cta.buttonText}
+          <svg
+            class="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Elemento decorativo -->
+    <div class="mt-12 text-center">
+      <div class="inline-flex items-center space-x-2 bg-accent/20 px-6 py-3 rounded-full">
+        <span class="text-accent text-lg">✨</span>
+        <span class="text-primary-dark font-medium">{trustContent.footerText}</span>
+        <span class="text-accent text-lg">✨</span>
+      </div>
+    </div>
+  </div>
+</section> 

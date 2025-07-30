@@ -1,58 +1,17 @@
 ---
+import { getTestimonialsContent } from "../utils/content";
+
 export interface Props {
   title?: string;
   subtitle?: string;
 }
 
-const {
-  title = "Testimonios de Transformación",
-  subtitle = "Descubre las experiencias de sanación de nuestros clientes"
-} = Astro.props;
+const testimonialsContent = getTestimonialsContent();
 
-const testimonios = [
-  {
-    id: 1,
-    name: "María Elena",
-    country: "México",
-    avatar: "🌺",
-    comment: "La biodescodificación cambió mi vida. Después de años de dolor crónico, finalmente encontré la raíz emocional y me liberé completamente. Megara tiene un don especial para conectar con el alma."
-  },
-  {
-    id: 2,
-    name: "Carlos Andrés",
-    country: "Colombia",
-    avatar: "🌿",
-    comment: "El biomagnetismo me ayudó a recuperar mi energía vital. Llegué agotado y estresado, y salí renovado. La sesión fue profunda y transformadora. Altamente recomendado."
-  },
-  {
-    id: 3,
-    name: "Ana Sofía",
-    country: "Argentina",
-    avatar: "🌙",
-    comment: "Los círculos de mujeres me conectaron con mi esencia femenina de una manera que nunca había experimentado. Es un espacio sagrado de sanación y empoderamiento."
-  },
-  {
-    id: 4,
-    name: "Luis Fernando",
-    country: "Chile",
-    avatar: "⭐",
-    comment: "Las constelaciones familiares me permitieron sanar heridas que arrastraba desde la infancia. Ahora tengo una relación mucho más sana con mi familia y conmigo mismo."
-  },
-  {
-    id: 5,
-    name: "Carmen Rosa",
-    country: "Perú",
-    avatar: "✨",
-    comment: "El Reiki me abrió un mundo de paz interior que no conocía. Cada sesión es una experiencia única de conexión espiritual. Megara transmite una energía increíble."
-  },
-  {
-    id: 6,
-    name: "Roberto José",
-    country: "Venezuela",
-    avatar: "🍃",
-    comment: "La sanación con cacao fue una experiencia mágica. Me conecté con mi corazón de una manera profunda y encontré claridad en decisiones importantes de mi vida."
-  }
-];
+const {
+  title = testimonialsContent.title,
+  subtitle = testimonialsContent.subtitle
+} = Astro.props;
 ---
 
 <section class="bg-primary-light/10 py-8 lg:py-16">
@@ -69,7 +28,7 @@ const testimonios = [
 
     <!-- Grid de testimonios -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {testimonios.map((testimonio) => (
+      {testimonialsContent.items.map((testimonio) => (
         <div class="bg-surface rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-primary-light/20 hover:border-primary-light/40">
           <!-- Avatar y información del cliente -->
           <div class="flex items-center mb-6">
@@ -86,6 +45,11 @@ const testimonios = [
                 </svg>
                 {testimonio.country}
               </p>
+              {testimonio.service && (
+                <p class="text-primary text-sm font-medium mt-1">
+                  {testimonio.service}
+                </p>
+              )}
             </div>
           </div>
 

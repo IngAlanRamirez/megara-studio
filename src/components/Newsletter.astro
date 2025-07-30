@@ -1,14 +1,18 @@
 ---
+import { getNewsletterContent } from "../utils/content";
+
 export interface Props {
   title?: string;
   subtitle?: string;
   disclaimer?: string;
 }
 
+const newsletterContent = getNewsletterContent();
+
 const {
-  title = "¿Te gusta lo que lees?",
-  subtitle = "Suscríbete a mi newsletter y recibe artículos exclusivos sobre sanación holística, herramientas prácticas y reflexiones para tu crecimiento personal.",
-  disclaimer = "Sin spam. Solo contenido valioso para tu bienestar.",
+  title = newsletterContent.title,
+  subtitle = newsletterContent.subtitle,
+  disclaimer = newsletterContent.disclaimer,
 } = Astro.props;
 ---
 
@@ -27,7 +31,7 @@ const {
       <form class="flex flex-col gap-4 max-w-md mx-auto">
         <input
           type="email"
-          placeholder="Tu email"
+          placeholder={newsletterContent.placeholder}
           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-base"
           required
         />
@@ -35,7 +39,7 @@ const {
           type="submit"
           class="w-full px-6 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors duration-300 shadow-md hover:shadow-lg text-sm"
         >
-          Suscribirse
+          {newsletterContent.buttonText}
         </button>
       </form>
 
@@ -70,14 +74,12 @@ const {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Mostrar mensaje de éxito
-      alert(
-        "¡Gracias por suscribirte! Te enviaremos contenido valioso pronto."
-      );
+      alert("¡Te has suscrito correctamente!");
 
       // Limpiar formulario
       emailInput.value = "";
     } catch (error) {
-      alert("Hubo un error al suscribirte. Inténtalo de nuevo.");
+      alert("Ocurrió un error al suscribirte. Por favor, inténtalo de nuevo.");
     }
   });
 </script>

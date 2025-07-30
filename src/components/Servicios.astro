@@ -1,67 +1,16 @@
 ---
 import ServiceCard from "./ServiceCard.astro";
+import { getServicesContent } from "../utils/content";
 
 export interface Props {
   title?: string;
   subtitle?: string;
 }
 
-const {
-  title = "Nuestros Servicios de Sanación",
-  subtitle = "Descubre las diferentes terapias holísticas que ofrecemos para tu bienestar integral",
-} = Astro.props;
+const servicesContent = getServicesContent();
 
-const servicios = [
-  {
-    id: "biodescodificacion",
-    title: "Biodescodificación",
-    description:
-      "Descubre el origen emocional de tus síntomas físicos y libera los patrones que limitan tu bienestar",
-    icon: "🌱",
-  },
-  {
-    id: "biomagnetismo",
-    title: "Biomagnetismo",
-    description:
-      "Equilibra tu campo magnético corporal para restaurar la salud y el balance energético",
-    icon: "🧲",
-  },
-  {
-    id: "tarot-terapeutico",
-    title: "Tarot Terapéutico",
-    description:
-      "Explora tu inconsciente y encuentra claridad en tu camino de vida a través de la sabiduría ancestral",
-    icon: "🔮",
-  },
-  {
-    id: "circulos-mujeres",
-    title: "Círculos de Mujeres",
-    description:
-      "Conecta con tu esencia femenina en un espacio sagrado de sororidad y empoderamiento",
-    icon: "🌙",
-  },
-  {
-    id: "constelaciones",
-    title: "Constelaciones",
-    description:
-      "Sanar las heridas familiares y liberar patrones transgeneracionales que afectan tu presente",
-    icon: "⭐",
-  },
-  {
-    id: "reiki",
-    title: "Reiki",
-    description:
-      "Recibe la energía universal de sanación para equilibrar tu cuerpo, mente y espíritu",
-    icon: "✨",
-  },
-  {
-    id: "sanacion-cacao",
-    title: "Sanación con Cacao",
-    description:
-      "Experimenta la medicina sagrada del cacao para abrir tu corazón y conectar con tu sabiduría interior",
-    icon: "🍫",
-  },
-];
+const { title = servicesContent.title, subtitle = servicesContent.subtitle } =
+  Astro.props;
 ---
 
 <section class="bg-background py-20 lg:py-32">
@@ -82,21 +31,24 @@ const servicios = [
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
     >
-      {servicios.map((servicio) => <ServiceCard service={servicio} />)}
+      {
+        servicesContent.items.map((servicio) => (
+          <ServiceCard service={servicio} />
+        ))
+      }
     </div>
 
     <!-- CTA adicional -->
     <div class="mt-16 text-center">
       <div class="bg-primary-light/20 rounded-2xl p-8 max-w-2xl mx-auto">
         <h3 class="text-2xl font-display font-semibold text-primary-dark mb-4">
-          ¿No encuentras lo que buscas?
+          {servicesContent.cta.title}
         </h3>
         <p class="text-neutral-dark/80 mb-6">
-          Cada persona es única. Agenda una consulta personalizada para
-          descubrir qué terapia es la más adecuada para ti.
+          {servicesContent.cta.description}
         </p>
         <a href="/contacto" class="btn-primary inline-flex items-center">
-          Consulta personalizada
+          {servicesContent.cta.buttonText}
           <svg
             class="w-5 h-5 ml-2"
             fill="none"
@@ -114,4 +66,3 @@ const servicios = [
     </div>
   </div>
 </section>
-

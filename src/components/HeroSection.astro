@@ -1,6 +1,7 @@
 ---
 import ImageSlider from "./ImageSlider.astro";
 import { heroSliderImages } from "../data/sliderImages";
+import { getHeroContent } from "../utils/content";
 
 // Props opcionales para personalización
 export interface Props {
@@ -15,10 +16,12 @@ export interface Props {
   }>;
 }
 
+const heroContent = getHeroContent();
+
 const {
-  title = "Sana tu cuerpo, mente y alma desde cualquier lugar del mundo",
-  subtitle = "Terapias de sanación emocional, física y espiritual",
-  ctaText = "Reserva tu sesión",
+  title = heroContent.title,
+  subtitle = heroContent.subtitle,
+  ctaText = heroContent.ctaPrimary,
   ctaLink = "/agendar",
   images = heroSliderImages,
 } = Astro.props;
@@ -71,24 +74,22 @@ const {
             href="/servicios"
             class="btn-secondary inline-flex items-center justify-center"
           >
-            Conoce mis servicios
+            {heroContent.ctaSecondary}
           </a>
         </div>
 
         <!-- Elementos de confianza -->
         <div class="flex flex-wrap justify-center lg:justify-start gap-8">
-          <div class="flex items-center space-x-2">
-            <div class="w-3 h-3 bg-accent rounded-full"></div>
-            <span class="text-sm text-neutral-dark/70">Sesiones online</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <div class="w-3 h-3 bg-accent rounded-full"></div>
-            <span class="text-sm text-neutral-dark/70">Certificada</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <div class="w-3 h-3 bg-accent rounded-full"></div>
-            <span class="text-sm text-neutral-dark/70">+100 clientes</span>
-          </div>
+          {
+            heroContent.trustIndicators.map((indicator) => (
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-accent rounded-full" />
+                <span class="text-sm text-neutral-dark/70">
+                  {indicator.text}
+                </span>
+              </div>
+            ))
+          }
         </div>
       </div>
 

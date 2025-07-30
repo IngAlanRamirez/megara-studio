@@ -1,6 +1,11 @@
 ---
+import { getNavigation, getSiteInfo } from "../utils/content";
+
 // Estado para el menú móvil
 let isMenuOpen = false;
+
+const navigation = getNavigation();
+const siteInfo = getSiteInfo();
 ---
 
 <nav
@@ -18,7 +23,7 @@ let isMenuOpen = false;
         <span
           class="text-xl font-display font-bold text-primary-dark group-hover:text-primary transition-colors duration-200"
         >
-          Megara Studio
+          {siteInfo.name}
         </span>
       </a>
 
@@ -28,7 +33,7 @@ let isMenuOpen = false;
           href="/"
           class="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium relative group"
         >
-          Inicio
+          {navigation.home}
           <span
             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"
           ></span>
@@ -37,7 +42,7 @@ let isMenuOpen = false;
           href="/sobre-megara"
           class="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium relative group"
         >
-          Sobre Megara
+          {navigation.about}
           <span
             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"
           ></span>
@@ -46,7 +51,7 @@ let isMenuOpen = false;
           href="/servicios"
           class="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium relative group"
         >
-          Servicios
+          {navigation.services}
           <span
             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"
           ></span>
@@ -55,7 +60,7 @@ let isMenuOpen = false;
           href="/blog"
           class="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium relative group"
         >
-          Blog
+          {navigation.blog}
           <span
             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"
           ></span>
@@ -64,7 +69,7 @@ let isMenuOpen = false;
           href="/contacto"
           class="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium relative group"
         >
-          Contacto
+          {navigation.contact}
           <span
             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"
           ></span>
@@ -73,7 +78,7 @@ let isMenuOpen = false;
 
       <!-- Botón CTA Desktop -->
       <div class="hidden lg:block">
-        <a href="/agendar" class="btn-primary"> Agenda tu sesión </a>
+        <a href="/agendar" class="btn-primary"> {navigation.bookSession} </a>
       </div>
 
       <!-- Botón menú móvil -->
@@ -107,35 +112,35 @@ let isMenuOpen = false;
           href="/"
           class="block text-neutral-dark hover:text-primary transition-colors duration-200 font-medium py-2 border-b border-primary-light/30"
         >
-          Inicio
+          {navigation.home}
         </a>
         <a
           href="/sobre-megara"
           class="block text-neutral-dark hover:text-primary transition-colors duration-200 font-medium py-2 border-b border-primary-light/30"
         >
-          Sobre Megara
+          {navigation.about}
         </a>
         <a
           href="/servicios"
           class="block text-neutral-dark hover:text-primary transition-colors duration-200 font-medium py-2 border-b border-primary-light/30"
         >
-          Servicios
+          {navigation.services}
         </a>
         <a
           href="/blog"
           class="block text-neutral-dark hover:text-primary transition-colors duration-200 font-medium py-2 border-b border-primary-light/30"
         >
-          Blog
+          {navigation.blog}
         </a>
         <a
           href="/contacto"
           class="block text-neutral-dark hover:text-primary transition-colors duration-200 font-medium py-2 border-b border-primary-light/30"
         >
-          Contacto
+          {navigation.contact}
         </a>
         <div class="pt-4">
           <a href="/agendar" class="btn-primary block w-full text-center">
-            Agenda tu sesión
+            {navigation.bookSession}
           </a>
         </div>
       </div>

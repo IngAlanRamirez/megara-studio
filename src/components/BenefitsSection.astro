@@ -1,32 +1,18 @@
 ---
+import { getBenefitsContent } from "../utils/content";
+
 // Props opcionales para personalización
 export interface Props {
   title?: string;
   subtitle?: string;
 }
 
-const {
-  title = "Beneficios de la Sanación Integral",
-  subtitle = "Descubre cómo nuestras terapias pueden transformar tu vida"
-} = Astro.props;
+const benefitsContent = getBenefitsContent();
 
-const benefits = [
-  {
-    icon: "💫",
-    title: "Equilibrio emocional",
-    description: "Encuentra la paz interior y el balance emocional que necesitas para vivir plenamente"
-  },
-  {
-    icon: "🧲",
-    title: "Sanación energética",
-    description: "Restaura tu campo energético y libera bloqueos que afectan tu bienestar físico y mental"
-  },
-  {
-    icon: "🌍",
-    title: "Terapias a distancia",
-    description: "Recibe sanación desde cualquier lugar del mundo, sin importar dónde te encuentres"
-  }
-];
+const {
+  title = benefitsContent.title,
+  subtitle = benefitsContent.subtitle
+} = Astro.props;
 ---
 
 <section class="bg-surface py-20 lg:py-32">
@@ -43,7 +29,7 @@ const benefits = [
 
     <!-- Grid de beneficios -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-      {benefits.map((benefit) => (
+      {benefitsContent.items.map((benefit) => (
         <div class="text-center group">
           <!-- Ícono -->
           <div class="mb-6">
@@ -69,7 +55,7 @@ const benefits = [
     <div class="mt-16 text-center">
       <div class="inline-flex items-center space-x-2 bg-primary-light/20 px-6 py-3 rounded-full">
         <span class="text-accent text-lg">✨</span>
-        <span class="text-primary-dark font-medium">Transforma tu vida desde hoy</span>
+        <span class="text-primary-dark font-medium">{benefitsContent.footerText}</span>
         <span class="text-accent text-lg">✨</span>
       </div>
     </div>

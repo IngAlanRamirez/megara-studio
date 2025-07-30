@@ -1,0 +1,343 @@
+{
+  "site": {
+    "name": "Megara Studio",
+    "tagline": "Consultorio de Sanación Integral",
+    "description": "Descubre la sanación emocional, física y espiritual con Megara Studio. Biodescodificación, biomagnetismo, reiki, tarot terapéutico y más. Sesiones online disponibles.",
+    "keywords": "sanación, terapia holística, biodescodificación, biomagnetismo, reiki, tarot, constelaciones, cacao, online"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre Megara",
+    "services": "Servicios",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "bookSession": "Agenda tu sesión"
+  },
+  "hero": {
+    "title": "Sana tu cuerpo, mente y alma desde cualquier lugar del mundo",
+    "subtitle": "Terapias de sanación emocional, física y espiritual",
+    "ctaPrimary": "Reserva tu sesión",
+    "ctaSecondary": "Conoce mis servicios",
+    "trustIndicators": [
+      {
+        "text": "Sesiones online",
+        "icon": "💻"
+      },
+      {
+        "text": "Certificada",
+        "icon": "🎓"
+      },
+      {
+        "text": "+100 clientes",
+        "icon": "👥"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Beneficios de la Sanación Integral",
+    "subtitle": "Descubre cómo nuestras terapias pueden transformar tu vida",
+    "items": [
+      {
+        "icon": "💫",
+        "title": "Transformación Profunda",
+        "description": "Descubre la raíz emocional de tus síntomas y libera patrones que limitan tu bienestar integral"
+      },
+      {
+        "icon": "🌙",
+        "title": "Sanación Espiritual",
+        "description": "Conecta con tu esencia más profunda y restaura el equilibrio entre cuerpo, mente y espíritu"
+      },
+      {
+        "icon": "🌍",
+        "title": "Accesibilidad Global",
+        "description": "Recibe sanación desde cualquier lugar del mundo, con la misma efectividad que en persona"
+      },
+      {
+        "icon": "✨",
+        "title": "Resultados Duraderos",
+        "description": "Experimenta cambios reales y sostenibles que transforman tu vida desde la raíz"
+      },
+      {
+        "icon": "🌱",
+        "title": "Crecimiento Personal",
+        "description": "Desarrolla herramientas prácticas para tu autoconocimiento y evolución espiritual"
+      },
+      {
+        "icon": "🕊️",
+        "title": "Paz Interior",
+        "description": "Encuentra la calma mental y emocional que necesitas para vivir con plenitud y propósito"
+      }
+    ],
+    "footerText": "Transforma tu vida desde hoy"
+  },
+  "services": {
+    "title": "Nuestros Servicios de Sanación",
+    "subtitle": "Descubre las diferentes terapias holísticas que ofrecemos para tu bienestar integral",
+    "items": [
+      {
+        "id": "biodescodificacion",
+        "title": "Biodescodificación",
+        "description": "Descubre el origen emocional de tus síntomas físicos y libera los patrones que limitan tu bienestar integral",
+        "icon": "🌱",
+        "duration": "60-90 min",
+        "modality": "Online/Online"
+      },
+      {
+        "id": "biomagnetismo",
+        "title": "Biomagnetismo",
+        "description": "Equilibra tu campo magnético corporal para restaurar la salud y el balance energético desde la raíz",
+        "icon": "🧲",
+        "duration": "60-75 min",
+        "modality": "Online/Online"
+      },
+      {
+        "id": "tarot-terapeutico",
+        "title": "Tarot Terapéutico",
+        "description": "Explora tu inconsciente y encuentra claridad en tu camino de vida a través de la sabiduría ancestral",
+        "icon": "🔮",
+        "duration": "45-60 min",
+        "modality": "Online/Online"
+      },
+      {
+        "id": "circulos-mujeres",
+        "title": "Círculos de Mujeres",
+        "description": "Conecta con tu esencia femenina en un espacio sagrado de sororidad, sanación y empoderamiento",
+        "icon": "🌙",
+        "duration": "90-120 min",
+        "modality": "Online/Grupal"
+      },
+      {
+        "id": "constelaciones",
+        "title": "Constelaciones Familiares",
+        "description": "Sana las heridas familiares y libera patrones transgeneracionales que afectan tu presente",
+        "icon": "⭐",
+        "duration": "90-120 min",
+        "modality": "Online/Online"
+      },
+      {
+        "id": "reiki",
+        "title": "Reiki",
+        "description": "Recibe la energía universal de sanación para equilibrar tu cuerpo, mente y espíritu de forma profunda",
+        "icon": "✨",
+        "duration": "60-75 min",
+        "modality": "Online/Online"
+      },
+      {
+        "id": "sanacion-cacao",
+        "title": "Sanación con Cacao",
+        "description": "Experimenta la medicina sagrada del cacao para abrir tu corazón y conectar con tu sabiduría interior",
+        "icon": "🍫",
+        "duration": "90-120 min",
+        "modality": "Online/Online"
+      },
+      {
+        "id": "consulta-personalizada",
+        "title": "Consulta Personalizada",
+        "description": "Descubre qué terapia es la más adecuada para ti a través de una evaluación integral personalizada",
+        "icon": "💫",
+        "duration": "30-45 min",
+        "modality": "Online/Online"
+      }
+    ],
+    "cta": {
+      "title": "¿No encuentras lo que buscas?",
+      "description": "Cada persona es única. Agenda una consulta personalizada para descubrir qué terapia es la más adecuada para ti.",
+      "buttonText": "Consulta personalizada"
+    }
+  },
+  "trust": {
+    "title": "¿Por qué Confiar en Megara Studio?",
+    "subtitle": "Tu bienestar es nuestra prioridad. Conoce las credenciales y el compromiso que respaldan nuestro trabajo.",
+    "credentials": [
+      {
+        "icon": "🎓",
+        "title": "Formación Certificada",
+        "description": "Especialista en terapias holísticas con certificaciones internacionales en biodescodificación, biomagnetismo y reiki"
+      },
+      {
+        "icon": "🌟",
+        "title": "Experiencia Comprobada",
+        "description": "Más de 5 años ayudando a personas a transformar sus vidas a través de la sanación integral"
+      },
+      {
+        "icon": "💝",
+        "title": "Enfoque Humano",
+        "description": "Cada sesión es personalizada y adaptada a tus necesidades específicas, con seguimiento continuo"
+      },
+      {
+        "icon": "🔒",
+        "title": "Confidencialidad Total",
+        "description": "Tu privacidad es sagrada. Todas las sesiones son completamente confidenciales y seguras"
+      },
+      {
+        "icon": "🌍",
+        "title": "Alcance Global",
+        "description": "Sesiones online disponibles para toda Latinoamérica, con horarios flexibles para diferentes zonas horarias"
+      },
+      {
+        "icon": "✨",
+        "title": "Resultados Garantizados",
+        "description": "Compromiso con tu transformación. Si no ves resultados, trabajamos juntos hasta lograrlos"
+      }
+    ],
+    "certifications": {
+      "title": "Certificaciones y Formación",
+      "description": "Megara cuenta con formación especializada en las mejores escuelas de terapias holísticas de Latinoamérica",
+      "items": [
+        "Biodescodificación Biológica",
+        "Biomagnetismo Médico",
+        "Reiki Usui Tradicional",
+        "Constelaciones Familiares",
+        "Tarot Terapéutico",
+        "Sanación con Cacao Sagrado"
+      ]
+    },
+    "cta": {
+      "text": "¿Quieres conocer más sobre mi formación y experiencia?",
+      "buttonText": "Conoce mi historia"
+    },
+    "footerText": "Tu transformación comienza aquí"
+  },
+  "testimonials": {
+    "title": "Testimonios de Transformación",
+    "subtitle": "Descubre las experiencias de sanación de nuestros clientes",
+    "items": [
+      {
+        "id": 1,
+        "name": "María Elena",
+        "country": "México",
+        "avatar": "🌺",
+        "service": "Biodescodificación",
+        "comment": "Después de 3 años con migrañas crónicas, la biodescodificación me reveló que era estrés emocional acumulado. En solo 2 sesiones, las migrañas desaparecieron completamente. Megara tiene una intuición increíble para encontrar la raíz del problema."
+      },
+      {
+        "id": 2,
+        "name": "Carlos Andrés",
+        "country": "Colombia",
+        "avatar": "🌿",
+        "service": "Biomagnetismo",
+        "comment": "Llegué con fatiga extrema y problemas digestivos. El biomagnetismo restableció mi energía vital de forma inmediata. Después de la sesión me sentí como si hubiera dormido 12 horas. Los problemas digestivos mejoraron en una semana."
+      },
+      {
+        "id": 3,
+        "name": "Ana Sofía",
+        "country": "Argentina",
+        "avatar": "🌙",
+        "service": "Círculos de Mujeres",
+        "comment": "Los círculos de mujeres transformaron mi relación conmigo misma. Encontré mi voz, mi poder y mi feminidad sagrada. Es un espacio donde las mujeres nos sanamos juntas. Megara crea un ambiente mágico de sororidad."
+      },
+      {
+        "id": 4,
+        "name": "Luis Fernando",
+        "country": "Chile",
+        "avatar": "⭐",
+        "service": "Constelaciones Familiares",
+        "comment": "Las constelaciones me liberaron de patrones familiares tóxicos que arrastraba desde la infancia. Ahora tengo una relación sana con mis padres y he perdonado heridas profundas. Es como si hubiera nacido de nuevo."
+      },
+      {
+        "id": 5,
+        "name": "Carmen Rosa",
+        "country": "Perú",
+        "avatar": "✨",
+        "service": "Reiki",
+        "comment": "El Reiki me conectó con una paz interior que no conocía. Durante la sesión sentí una energía cálida que me envolvió completamente. Después me sentí renovada y con claridad mental. Megara tiene un don especial para transmitir energía."
+      },
+      {
+        "id": 6,
+        "name": "Roberto José",
+        "country": "Venezuela",
+        "avatar": "🍃",
+        "service": "Sanación con Cacao",
+        "comment": "La ceremonia de cacao fue una experiencia profundamente espiritual. Me conecté con mi corazón de una manera que nunca había sentido. Encontré respuestas a preguntas que llevaba años haciéndome. Es medicina sagrada."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Inicia tu Transformación",
+    "subtitle": "El primer paso hacia tu sanación integral. Sesiones online disponibles para todo Latinoamérica.",
+    "whyChooseUs": {
+      "title": "¿Por qué elegir Megara Studio?",
+      "benefits": [
+        {
+          "title": "Experiencia Profesional",
+          "description": "Más de 5 años de experiencia en terapias holísticas certificadas"
+        },
+        {
+          "title": "Enfoque Personalizado",
+          "description": "Cada sesión es única y adaptada a tus necesidades específicas"
+        },
+        {
+          "title": "Resultados Comprobados",
+          "description": "Más de 100 clientes han experimentado transformaciones reales"
+        },
+        {
+          "title": "Accesibilidad Global",
+          "description": "Sesiones online desde cualquier lugar del mundo"
+        }
+      ]
+    },
+    "preparation": {
+      "title": "📋 Preparación para tu sesión",
+      "items": [
+        "Encuentra un espacio tranquilo y privado",
+        "Asegúrate de tener buena conexión a internet",
+        "Ten papel y lápiz para tomar notas",
+        "Llega 5 minutos antes para prepararte"
+      ]
+    },
+    "whatsapp": {
+      "text": "¿Prefieres agendar por WhatsApp?",
+      "buttonText": "Agendar por WhatsApp",
+      "message": "Hola Megara! Me gustaría agendar una sesión de sanación. ¿Podrías ayudarme a encontrar la terapia más adecuada para mí?"
+    },
+    "calendly": {
+      "title": "Selecciona tu horario",
+      "description": "Elige la fecha y hora que mejor te convenga",
+      "note": "Las sesiones tienen una duración de 60-90 minutos. Recibirás un enlace de Zoom 15 minutos antes de tu cita."
+    },
+    "additionalInfo": {
+      "title": "¿Tienes dudas sobre el proceso?",
+      "description": "Nuestro equipo está aquí para ayudarte. Puedes contactarnos por WhatsApp o email para resolver cualquier pregunta antes de agendar.",
+      "buttons": [
+        {
+          "text": "Contactar por email",
+          "type": "secondary"
+        },
+        {
+          "text": "Ver servicios disponibles",
+          "type": "primary"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "description": "Megara Studio - Consultorio de Sanación Integral. Transformando vidas a través de terapias holísticas desde cualquier lugar del mundo.",
+    "links": {
+      "services": "Servicios",
+      "about": "Sobre Megara",
+      "testimonials": "Testimonios",
+      "contact": "Contacto",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio"
+    },
+    "contact": {
+      "email": "hola@megarastudio.com",
+      "whatsapp": "+573001234567",
+      "location": "Sesiones Online - Todo Latinoamérica"
+    },
+    "social": {
+      "instagram": "@megarastudio",
+      "facebook": "Megara Studio",
+      "youtube": "Megara Studio"
+    }
+  },
+  "newsletter": {
+    "title": "¿Te gusta lo que lees?",
+    "subtitle": "Suscríbete a mi newsletter y recibe artículos exclusivos sobre sanación holística, herramientas prácticas y reflexiones para tu crecimiento personal.",
+    "placeholder": "Tu email",
+    "buttonText": "Suscribirse",
+    "disclaimer": "Sin spam. Solo contenido valioso para tu bienestar.",
+    "successMessage": "¡Gracias por suscribirte! Te enviaremos contenido valioso pronto.",
+    "errorMessage": "Hubo un error al suscribirte. Inténtalo de nuevo."
+  }
+}
