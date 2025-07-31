@@ -1,0 +1,86 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build with Astro
+      run: |
+        NODE_ENV=production npm run build
+        echo "Build completed successfully"
+        
+    - name: Verify CSS generation
+      run: |
+        echo "Checking if CSS was generated..."
+        if [ -d "dist/_astro" ] && [ -n "$(find dist/_astro -name '*.css' -type f)" ]; then
+          css_file=$(find dist/_astro -name "*.css" -type f | head -1)
+          css_size=$(du -h "$css_file" | cut -f1)
+          echo "✅ CSS generated successfully: $css_file ($css_size)"
+        else
+          echo "❌ CSS not found in dist/_astro"
+          exit 1
+        fi
+        
+    - name: Verify HTML includes CSS
+      run: |
+        echo "Checking if HTML includes CSS link..."
+        if grep -q "link.*stylesheet.*_astro" dist/index.html; then
+          echo "✅ CSS link found in index.html"
+        else
+          echo "❌ CSS link not found in index.html"
+          exit 1
+        fi
+        
+    - name: List build contents
+      run: |
+        echo "Build contents:"
+        ls -la dist/
+        echo "CSS files:"
+        find dist/_astro -name "*.css" -type f -exec ls -la {} \;
+        
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: dist/
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+    
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
