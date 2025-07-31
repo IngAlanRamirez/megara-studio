@@ -13,7 +13,9 @@
     "deploy:force": "bash scripts/deploy.sh --force",
     "check-deploy": "bash scripts/check-deploy.sh",
     "check-images": "bash scripts/check-images.sh",
-    "check-config": "bash scripts/check-config.sh"
+    "check-config": "bash scripts/check-config.sh",
+    "check-css": "bash scripts/test-css.sh",
+    "check-github-pages": "bash scripts/check-github-pages.sh"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

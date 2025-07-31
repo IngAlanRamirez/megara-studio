@@ -76,6 +76,25 @@ print_status "Construyendo el proyecto..."
 NODE_ENV=production npm run build
 print_success "Proyecto construido correctamente"
 
+# Verificar que el CSS se generó correctamente
+print_status "Verificando generación de CSS..."
+if [ -d "dist/_astro" ] && [ -n "$(find dist/_astro -name '*.css' -type f)" ]; then
+    css_file=$(find dist/_astro -name "*.css" -type f | head -1)
+    css_size=$(du -h "$css_file" | cut -f1)
+    print_success "CSS generado correctamente: $css_file ($css_size)"
+else
+    print_error "No se encontró archivo CSS en dist/_astro"
+    exit 1
+fi
+
+# Verificar que el HTML incluye el CSS
+if grep -q "link.*stylesheet.*_astro" dist/index.html; then
+    print_success "CSS incluido correctamente en index.html"
+else
+    print_error "CSS no incluido en index.html"
+    exit 1
+fi
+
 # Verificar que el build se creó correctamente
 if [ ! -d "dist" ]; then
     print_error "El directorio dist no se creó. Verifica que el build fue exitoso."

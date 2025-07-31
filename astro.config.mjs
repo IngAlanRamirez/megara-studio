@@ -13,7 +13,7 @@ console.log("  - Base path:", basePath);
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://megara-studio.com",
+  site: "https://ingalanramirez.github.io",
   base: basePath,
   integrations: [
     tailwind(),
