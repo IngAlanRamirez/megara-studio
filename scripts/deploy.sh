@@ -82,6 +82,13 @@ if [ ! -d "dist" ]; then
     exit 1
 fi
 
+# Copiar archivo .nojekyll si existe
+if [ -f ".nojekyll" ]; then
+    print_status "Copiando archivo .nojekyll..."
+    cp .nojekyll dist/
+    print_success "Archivo .nojekyll copiado correctamente"
+fi
+
 # Verificar el estado de git
 print_status "Verificando estado de Git..."
 
