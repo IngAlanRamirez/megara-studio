@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://megara-studio.com/sitemap-index.xml
+
+# Crawl-delay para ser respetuoso con el servidor
+Crawl-delay: 1
+
+# No indexar archivos de desarrollo
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /.astro/
+
+# Permitir recursos importantes
+Allow: /assets/
+Allow: /favicon.svg
+Allow: /sitemap-index.xml 
