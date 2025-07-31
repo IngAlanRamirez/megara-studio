@@ -46,7 +46,7 @@ const {
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         />
         <!-- Fallback si la imagen no carga -->
-        <div class="hidden w-full h-full bg-gradient-to-br from-primary-light/30 to-primary/50 rounded-lg flex items-center justify-center">
+        <div class="hidden w-full h-full bg-gradient-to-br from-primary-light/30 to-primary/50 rounded-lg items-center justify-center">
           <div class="text-center text-primary-dark">
             <div class="text-4xl mb-2">🌿</div>
             <div class="text-sm font-medium">{image.alt}</div>
@@ -116,7 +116,7 @@ const {
     private currentSlide: number;
     private autoplay: boolean;
     private autoplaySpeed: number;
-    private autoplayInterval: number | null;
+    private autoplayInterval: number | NodeJS.Timeout | null;
 
     constructor(containerId: string, options: any = {}) {
       this.container = document.getElementById(containerId);
@@ -192,7 +192,7 @@ const {
     startAutoplay() {
       if (this.autoplayInterval) return;
       
-      this.autoplayInterval = window.setInterval(() => {
+      this.autoplayInterval = setInterval(() => {
         this.nextSlide();
       }, this.autoplaySpeed);
     }
