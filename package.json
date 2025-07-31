@@ -11,6 +11,8 @@
     "deploy": "bash scripts/deploy.sh",
     "deploy:win": "scripts/deploy.bat",
     "deploy:force": "bash scripts/deploy.sh --force",
+    "deploy:clean": "bash scripts/deploy-clean.sh",
+    "deploy:github-actions": "bash scripts/setup-github-pages.sh",
     "check-deploy": "bash scripts/check-deploy.sh",
     "check-images": "bash scripts/check-images.sh",
     "check-config": "bash scripts/check-config.sh",

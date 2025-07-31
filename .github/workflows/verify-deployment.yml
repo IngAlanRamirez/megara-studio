@@ -1,0 +1,90 @@
+name: Verify Deployment
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types:
+      - completed
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+    - name: Wait for deployment
+      run: |
+        echo "Waiting 30 seconds for deployment to propagate..."
+        sleep 30
+        
+    - name: Check site accessibility
+      run: |
+        echo "Checking if the main site is accessible..."
+        response=$(curl -s -o /dev/null -w "%{http_code}" https://ingalanramirez.github.io/megara-studio/)
+        if [ "$response" = "200" ]; then
+          echo "✅ Site is accessible (HTTP $response)"
+        else
+          echo "❌ Site returned HTTP $response"
+          exit 1
+        fi
+        
+    - name: Check CSS accessibility
+      run: |
+        echo "Checking if CSS files are accessible..."
+        
+        # Get the CSS filename from the build
+        css_files=$(find dist/_astro -name "*.css" -type f 2>/dev/null || echo "")
+        
+        if [ -n "$css_files" ]; then
+          for css_file in $css_files; do
+            css_filename=$(basename "$css_file")
+            css_url="https://ingalanramirez.github.io/megara-studio/_astro/$css_filename"
+            
+            echo "Checking: $css_url"
+            response=$(curl -s -o /dev/null -w "%{http_code}" "$css_url")
+            
+            if [ "$response" = "200" ]; then
+              echo "✅ CSS accessible: $css_filename (HTTP $response)"
+            else
+              echo "❌ CSS not accessible: $css_filename (HTTP $response)"
+              exit 1
+            fi
+          done
+        else
+          echo "⚠️ No CSS files found in dist/_astro"
+        fi
+        
+    - name: Check HTML structure
+      run: |
+        echo "Checking HTML structure..."
+        html_content=$(curl -s https://ingalanramirez.github.io/megara-studio/)
+        
+        if echo "$html_content" | grep -q "link.*stylesheet.*_astro"; then
+          echo "✅ CSS link found in HTML"
+        else
+          echo "❌ CSS link not found in HTML"
+          exit 1
+        fi
+        
+        if echo "$html_content" | grep -q "<title>"; then
+          echo "✅ HTML has title tag"
+        else
+          echo "❌ HTML missing title tag"
+          exit 1
+        fi
+        
+    - name: Performance check
+      run: |
+        echo "Checking page load time..."
+        start_time=$(date +%s.%N)
+        curl -s https://ingalanramirez.github.io/megara-studio/ > /dev/null
+        end_time=$(date +%s.%N)
+        
+        load_time=$(echo "$end_time - $start_time" | bc)
+        echo "Page load time: ${load_time}s"
+        
+        if (( $(echo "$load_time < 5" | bc -l) )); then
+          echo "✅ Page loads quickly"
+        else
+          echo "⚠️ Page load time is slow: ${load_time}s"
+        fi 
